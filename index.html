@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ALIZONE - Pakistan Online Shopping</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+</head>
+
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div>Welcome to ALIZONE Pakistan</div>
+
+        <div class="top-links">
+            <a href="#seller">Seller Center</a>
+            <a href="#help">Customer Service</a>
+
+            <select id="language">
+                <option>English</option>
+                <option>اردو</option>
+                <option>العربية</option>
+                <option>বাংলা</option>
+                <option>中文</option>
+                <option>हिन्दी</option>
+                <option>Türkçe</option>
+                <option>Español</option>
+                <option>Français</option>
+                <option>Deutsch</option>
+            </select>
+        </div>
+    </div>
+
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <div class="logo">
+            <a href="#">
+                <span>ALI</span>ZONE
+            </a>
+            <small>Pakistan Online Shopping</small>
+        </div>
+
+        <!-- SEARCH -->
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search products on ALIZONE..."
+            >
+            <button onclick="searchProducts()">🔍</button>
+        </div>
+
+        <!-- DELIVERY -->
+        <div class="delivery-box">
+            <span>📍 Deliver to</span>
+
+            <select id="city">
+                <option>Lahore</option>
+                <option>Faisalabad</option>
+                <option>Karachi</option>
+                <option>Islamabad</option>
+                <option>Rawalpindi</option>
+                <option>Multan</option>
+                <option>Gujranwala</option>
+                <option>Peshawar</option>
+                <option>Quetta</option>
+            </select>
+        </div>
+
+        <!-- ACCOUNT -->
+        <div class="account">
+            <span>Hello, Sign in</span>
+            <strong>Account & Orders</strong>
+        </div>
+
+        <!-- CART -->
+        <div class="cart" onclick="openCart()">
+            🛒
+            <span>Cart</span>
+            <b id="cartCount">0</b>
+        </div>
+
+    </header>
+
+
+    <!-- NAVIGATION -->
+    <nav class="main-nav">
+
+        <button onclick="toggleMenu()">☰ All Categories</button>
+
+        <a href="#">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#deals">Today's Deals</a>
+        <a href="#products">Products</a>
+        <a href="#seller">Sell on ALIZONE</a>
+        <a href="#help">Customer Service</a>
+
+    </nav>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="hero-tag">PAKISTAN'S ONLINE MARKETPLACE</span>
+
+            <h1>
+                Shop Everything<br>
+                You Love at <span>ALIZONE</span>
+            </h1>
+
+            <p>
+                Best products, affordable prices and fast delivery
+                across Pakistan.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#products" class="btn-primary">
+                    Shop Now
+                </a>
+
+                <a href="#seller" class="btn-secondary">
+                    Become a Seller
+                </a>
+            </div>
+
+        </div>
+
+        <div class="hero-image">
+            <div class="shopping-icon">🛍️</div>
+            <h2>ALIZONE</h2>
+            <p>Shopping Made Easy</p>
+        </div>
+
+    </section>
+
+
+    <!-- QUICK FEATURES -->
+    <section class="features">
+
+        <div class="feature">
+            <span>🚚</span>
+            <div>
+                <strong>Fast Delivery</strong>
+                <small>Delivery across Pakistan</small>
+            </div>
+        </div>
+
+        <div class="feature">
+            <span>💵</span>
+            <div>
+                <strong>Cash on Delivery</strong>
+                <small>Pay when you receive</small>
+            </div>
+        </div>
+
+        <div class="feature">
+            <span>💳</span>
+            <div>
+                <strong>Secure Payment</strong>
+                <small>Card & Bank Payment</small>
+            </div>
+        </div>
+
+        <div class="feature">
+            <span>🔒</span>
+            <div>
+                <strong>Buyer Protection</strong>
+                <small>Safe & secure shopping</small>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+    <section class="section" id="categories">
+
+        <div class="section-title">
+            <h2>Popular Categories</h2>
+            <a href="#">View All →</a>
+        </div>
+
+        <div class="category-grid">
+
+            <div class="category-card">
+                <div class="category-icon">📱</div>
+                <h3>Mobiles</h3>
+                <p>Smartphones & Accessories</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">💻</div>
+                <h3>Electronics</h3>
+                <p>Laptops & Gadgets</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">👕</div>
+                <h3>Fashion</h3>
+                <p>Men & Women</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">🏠</div>
+                <h3>Home</h3>
+                <p>Home & Kitchen</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">💄</div>
+                <h3>Beauty</h3>
+                <p>Beauty & Personal Care</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">🧸</div>
+                <h3>Kids</h3>
+                <p>Toys & Baby Products</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">🎮</div>
+                <h3>Gaming</h3>
+                <p>Games & Consoles</p>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">🚗</div>
+                <h3>Automotive</h3>
+                <p>Car & Bike Accessories</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DEAL BANNER -->
+    <section class="deal-banner" id="deals">
+
+        <div>
+            <span>LIMITED TIME OFFER</span>
+
+            <h2>Big Shopping Deals</h2>
+
+            <p>
+                Save more on thousands of products.
+            </p>
+        </div>
+
+        <div class="deal-offer">
+            <strong>UP TO</strong>
+            <b>50%</b>
+            <span>OFF</span>
+        </div>
+
+        <a href="#products" class="deal-button">
+            Shop Deals
+        </a>
+
+    </section>
+
+
+    <!-- PRODUCTS -->
+    <section class="section" id="products">
+
+        <div class="section-title">
+
+            <div>
+                <h2>Featured Products</h2>
+                <p>Popular products on ALIZONE</p>
+            </div>
+
+            <div class="product-controls">
+
+                <select id="sortProducts" onchange="sortProducts()">
+                    <option value="default">Sort Products</option>
+                    <option value="low">Price: Low to High</option>
+                    <option value="high">Price: High to Low</option>
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="product-grid" id="productGrid">
+
+            <!-- PRODUCT 1 -->
+            <div class="product-card" data-price="34999">
+
+                <div class="product-image">
+                    📱
+                    <span class="discount">-15%</span>
+                </div>
+
+                <div class="product-info">
+
+                    <small>Mobile Phones</small>
+
+                    <h3>Smartphone Pro 128GB</h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                        <span>(125)</span>
+                    </div>
+
+                    <div class="price">
+                        <strong>Rs. 34,999</strong>
+                        <del>Rs. 41,000</del>
+                    </div>
+
+                    <button onclick="addToCart('Smartphone Pro 128GB',34999)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+            <div class="product-card" data-price="7999">
+
+                <div class="product-image">
+                    🎧
+                    <span class="discount">-20%</span>
+                </div>
+
+                <div class="product-info">
+
+                    <small>Electronics</small>
+
+                    <h3>Wireless Bluetooth Headphones</h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                        <span>(89)</span>
+                    </div>
+
+                    <div class="price">
+                        <strong>Rs. 7,999</strong>
+                        <del>Rs. 10,000</del>
+                    </div>
+
+                    <button onclick="addToCart('Wireless Bluetooth Headphones',7999)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+            <div class="product-card" data-price="2999">
+
+                <div class="product-image">
+                    ⌚
+                    <span class="discount">-25%</span>
+                </div>
+
+                <div class="product-info">
+
+                    <small>Smart Watches</small>
+
+                    <h3>Smart Watch Series 8</h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐☆
+                        <span>(76)</span>
+                    </div>
+
+                    <div class="price">
+                        <strong>Rs. 2,999</strong>
+                        <del>Rs. 4,000</del>
+                    </div>
+
+                    <button onclick="addToCart('Smart Watch Series 8',2999)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 4 -->
+            <div class="product-card" data-price="4599">
+
+                <div class="product-image">
+                    👟
+                    <span class="discount">-30%</span>
+                </div>
+
+                <div class="product-info">
+
+                    <small>Fashion</small>
+
+                    <h3>Men Running Sports Shoes</h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                        <span>(142)</span>
+                    </div>
+
+                    <div class="price">
+                        <strong>Rs. 4,599</strong>
+                        <del>Rs. 6,500</del>
+                    </div>
+
+                    <button onclick="addToCart('Men Running Sports Shoes',4599)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 5 -->
+            <div class="product-card" data-price="1899">
+
+                <div class="product-image">
+                    🎒
+                    <span class="discount">-18%</span>
+                </div>
+
+                <div class="product-info">
+
+                    <small>Fashion</small>
+
+                    <h3>Premium Travel Backpack</h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                        <span>(64)</span>
+                    </div>
+
+                    <div class="price">
+                        <strong>Rs. 1,899</strong>
+                        <del>Rs. 2,300</del>
+                    </div>
+
+                    <button onclick="addToCart('Premium Travel Backpack',1899)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 6 -->
+            <div class="product-card" data-price="6499">
+
+                <div class="product-image">
+                    🍳
+                    <span class="discount">-22%</span>
+                </div>
+
+                <div class="product-info">
+
+                    <small>Home & Kitchen</small>
+
+                    <h3>Non Stick Cookware Set</h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                        <span>(97)</span>
+                    </div>
+
+                    <div class="price">
+                        <strong>Rs. 6,499</strong>
+                        <del>Rs. 8,300</del>
+                    </div>
+
+                    <button onclick="addToCart('Non Stick Cookware Set',6499)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 7 -->
+            <div class="product-card" data-price="2499">
+
+                <div class="product-image">
+                    💡
+                    <span class="discount">-15%</span>
+                </div>
+
+                <div class="product-info">
+
+                    <small>Home</small>
+
+                    <h3>Smart LED Light</h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐☆
+                        <span>(51)</span>
+                    </div>
+
+                    <div class="price">
+                        <strong>Rs. 2,499</strong>
+                        <del>Rs. 2,950</del>
+                    </div>
+
+                    <button onclick="addToCart('Smart LED Light',2499)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 8 -->
+            <div class="product-card" data-price="1299">
+
+                <div class="product-image">
+                    💄
+                    <span class="discount">-20%</span>
+                </div>
+
+                <div class="product-info">
+
+                    <small>Beauty</small>
+
+                    <h3>Beauty Makeup Kit</h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                        <span>(88)</span>
+                    </div>
+
+                    <div class="price">
+                        <strong>Rs. 1,299</strong>
+                        <del>Rs. 1,650</del>
+                    </div>
+
+                    <button onclick="addToCart('Beauty Makeup Kit',1299)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PAYMENT METHODS -->
+    <section class="payment-section">
+
+        <h2>Secure Payment Methods</h2>
+
+        <div class="payment-methods">
+
+            <div class="payment-card">
+                💵
+                <strong>Cash on Delivery</strong>
+                <span>Pay when you receive</span>
+            </div>
+
+            <div class="payment-card">
+                💳
+                <strong>Debit / Credit Card</strong>
+                <span>Secure card payment</span>
+            </div>
+
+            <div class="payment-card">
+                🏦
+                <strong>Bank Transfer</strong>
+                <span>Direct bank payment</span>
+            </div>
+
+            <div class="payment-card">
+                📱
+                <strong>Mobile Payment</strong>
+                <span>Easy digital payment</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SELLER CENTER -->
+    <section class="seller-section" id="seller">
+
+        <div class="seller-content">
+
+            <span>SELL ON ALIZONE</span>
+
+            <h2>Start Your Online Business Today</h2>
+
+            <p>
+                Register as a seller and reach customers
+                across Pakistan.
+            </p>
+
+            <ul>
+                <li>✓ Easy Seller Registration</li>
+                <li>✓ Manage Your Products</li>
+                <li>✓ Manage Orders</li>
+                <li>✓ Secure Payments</li>
+                <li>✓ Seller Support</li>
+            </ul>
+
+            <button onclick="openSellerForm()">
+                Become an ALIZONE Seller
+            </button>
+
+        </div>
+
+        <div class="seller-box">
+
+            <div class="seller-icon">🏪</div>
+
+            <h3>Seller Center</h3>
+
+            <p>
+                Manage your store from one place.
+            </p>
+
+            <button onclick="openSellerForm()">
+                Seller Center
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- CUSTOMER SERVICE -->
+    <section class="service-section" id="help">
+
+        <div class="section-title">
+            <h2>Customer Service</h2>
+            <p>We are here to help you</p>
+        </div>
+
+        <div class="service-grid">
+
+            <div class="service-card">
+                <span>📦</span>
+                <h3>Track Your Order</h3>
+                <p>Check your order delivery status.</p>
+                <button onclick="trackOrder()">Track Order</button>
+            </div>
+
+            <div class="service-card">
+                <span>↩️</span>
+                <h3>Returns & Refunds</h3>
+                <p>Get help with returns and refunds.</p>
+                <button onclick="showMessage('Returns & Refunds')">
+                    Learn More
+                </button>
+            </div>
+
+            <div class="service-card">
+                <span>❓</span>
+                <h3>Help Center</h3>
+                <p>Find answers to your questions.</p>
+                <button onclick="showMessage('Help Center')">
+                    Get Help
+                </button>
+            </div>
+
+            <div class="service-card">
+                <span>💬</span>
+                <h3>Contact Us</h3>
+                <p>Talk to ALIZONE customer support.</p>
+                <button onclick="showMessage('Customer Support')">
+                    Contact Support
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+
+        <div>
+            <h2>Get ALIZONE Deals</h2>
+            <p>
+                Subscribe and receive the latest offers.
+            </p>
+        </div>
+
+        <form onsubmit="subscribeNewsletter(event)">
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email address"
+                required
+            >
+
+            <button type="submit">
+                Subscribe
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-main">
+
+            <div class="footer-column">
+
+                <div class="footer-logo">
+                    ALIZONE
+                </div>
+
+                <p>
+                    Pakistan's online marketplace for
+                    shopping everything you love.
+                </p>
+
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">TikTok</a>
+                    <a href="#">YouTube</a>
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Get to Know Us</h3>
+
+                <a href="#">About ALIZONE</a>
+                <a href="#">Careers</a>
+                <a href="#">Press</a>
+                <a href="#">Our Stores</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Make Money With Us</h3>
+
+                <a href="#seller">Sell on ALIZONE</a>
+                <a href="#">Seller Center</a>
+                <a href="#">Advertise Products</a>
+                <a href="#">Become an Affiliate</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Customer Support</h3>
+
+                <a href="#help">Help Center</a>
+                <a href="#">Returns</a>
+                <a href="#">Shipping</a>
+                <a href="#">Contact Us</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h3>Payment</h3>
+
+                <span>💵 Cash on Delivery</span>
+                <span>💳 Debit / Credit Card</span>
+                <span>🏦 Bank Transfer</span>
+                <span>📱 Mobile Payment</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 ALIZONE. All Rights Reserved.
+            </p>
+
+            <div>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Refund Policy</a>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- CART MODAL -->
+    <div class="modal" id="cartModal">
+
+        <div class="modal-content">
+
+            <button class="close" onclick="closeCart()">×</button>
+
+            <h2>🛒 Your Shopping Cart</h2>
+
+            <div id="cartItems">
+                <p>Your cart is empty.</p>
+            </div>
+
+            <div class="cart-total">
+                <strong>Total:</strong>
+                <span id="cartTotal">Rs. 0</span>
+            </div>
+
+            <button class="checkout-button" onclick="checkout()">
+                Proceed to Checkout
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- SELLER MODAL -->
+    <div class="modal" id="sellerModal">
+
+        <div class="modal-content">
+
+            <button class="close" onclick="closeSellerForm()">×</button>
+
+            <h2>🏪 Become an ALIZONE Seller</h2>
+
+            <form onsubmit="registerSeller(event)">
+
+                <input
+                    type="text"
+                    id="sellerName"
+                    placeholder="Full Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="sellerEmail"
+                    placeholder="Email Address"
+                    required
+                >
+
+                <input
+                    type="tel"
+                    id="sellerPhone"
+                    placeholder="Phone Number"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="shopName"
+                    placeholder="Shop Name"
+                    required
+                >
+
+                <select required>
+                    <option value="">Select City</option>
+                    <option>Lahore</option>
+                    <option>Karachi</option>
+                    <option>Islamabad</option>
+                    <option>Faisalabad</option>
+                    <option>Rawalpindi</option>
+                </select>
+
+                <button type="submit">
+                    Register Seller
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- CHECKOUT MODAL -->
+    <div class="modal" id="checkoutModal">
+
+        <div class="modal-content">
+
+            <button class="close" onclick="closeCheckout()">×</button>
+
+            <h2>Checkout</h2>
+
+            <form onsubmit="placeOrder(event)">
+
+                <input
+                    type="text"
+                    placeholder="Full Name"
+                    required
+                >
+
+                <input
+                    type="tel"
+                    placeholder="Phone Number"
+                    required
+                >
+
+                <textarea
+                    placeholder="Delivery Address"
+                    required
+                ></textarea>
+
+                <select id="paymentMethod" required>
+
+                    <option value="">
+                        Select Payment Method
+                    </option>
+
+                    <option value="cod">
+                        Cash on Delivery
+                    </option>
+
+                    <option value="card">
+                        Debit / Credit Card
+                    </option>
+
+                    <option value="bank">
+                        Bank Transfer
+                    </option>
+
+                </select>
+
+                <button type="submit">
+                    Place Order
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- LOGIN MODAL -->
+    <div class="modal" id="loginModal">
+
+        <div class="modal-content">
+
+            <button class="close" onclick="closeLogin()">×</button>
+
+            <h2>ALIZONE Account</h2>
+
+            <form onsubmit="loginUser(event)">
+
+                <input
+                    type="email"
+                    placeholder="Email Address"
+                    required
+                >
+
+                <input
+                    type="password"
+                    placeholder="Password"
+                    required
+                >
+
+                <button type="submit">
+                    Sign In
+                </button>
+
+            </form>
+
+            <p>
+                New to ALIZONE?
+                <a href="#">Create Account</a>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT FILE -->
+    <script src="script.js"></script>
+
+</body>
+</html>
