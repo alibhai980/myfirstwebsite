@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cookBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
+    </linearGradient>
+    <linearGradient id="panGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="interiorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#090d16"/>
+    </linearGradient>
+    <linearGradient id="copperRim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <linearGradient id="woodHandle" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#92400e"/>
+      <stop offset="50%" stop-color="#78350f"/>
+      <stop offset="100%" stop-color="#451a03"/>
+    </linearGradient>
+    <filter id="panShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="15" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <rect width="400" height="400" fill="url(#cookBg)" rx="16"/>
+
+  <ellipse cx="200" cy="300" rx="130" ry="16" fill="#cbd5e1" opacity="0.6"/>
+
+  <g filter="url(#panShadow)">
+    <!-- Small Pot in Background -->
+    <ellipse cx="140" cy="180" rx="65" ry="25" fill="#475569"/>
+    <path d="M 75 180 C 75 220 205 220 205 180 Z" fill="#334155"/>
+    <ellipse cx="140" cy="180" rx="55" ry="18" fill="#1e293b"/>
+    <!-- Pot Lid Handle -->
+    <ellipse cx="140" cy="155" rx="14" ry="7" fill="#f59e0b"/>
+
+    <!-- Main Skillet Frying Pan -->
+    <!-- Handle -->
+    <path d="M 270 230 L 355 270 C 365 275 365 285 355 290 L 340 295 C 330 300 320 295 315 285 L 245 250 Z" fill="url(#woodHandle)"/>
+    <circle cx="345" cy="285" r="4" fill="#ffffff" opacity="0.8"/>
+
+    <!-- Pan Outer Body -->
+    <path d="M 80 220 C 80 290 260 290 260 220 Z" fill="url(#panGrad)"/>
+    
+    <!-- Copper Accent Rim -->
+    <ellipse cx="170" cy="220" rx="90" ry="32" fill="url(#copperRim)"/>
+
+    <!-- Pan Non-Stick Interior -->
+    <ellipse cx="170" cy="220" rx="84" ry="28" fill="url(#interiorGrad)"/>
+
+    <!-- Non-Stick Heat Ring -->
+    <circle cx="170" cy="220" r="18" fill="none" stroke="#ef4444" stroke-width="3" opacity="0.8"/>
+    <circle cx="170" cy="220" r="6" fill="#ef4444" opacity="0.8"/>
+
+    <!-- Surface Sheen -->
+    <path d="M 110 215 C 130 205 200 205 230 215 C 190 225 140 225 110 215 Z" fill="#ffffff" opacity="0.12"/>
+  </g>
+</svg>

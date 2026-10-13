@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cosBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff1f2"/>
+      <stop offset="100%" stop-color="#fdf2f8"/>
+    </linearGradient>
+    <linearGradient id="goldCap" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="50%" stop-color="#eab308"/>
+      <stop offset="100%" stop-color="#ca8a04"/>
+    </linearGradient>
+    <linearGradient id="lipstickColor" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e11d48"/>
+      <stop offset="50%" stop-color="#be123c"/>
+      <stop offset="100%" stop-color="#9f1239"/>
+    </linearGradient>
+    <linearGradient id="paletteCase" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181b"/>
+      <stop offset="100%" stop-color="#09090b"/>
+    </linearGradient>
+    <filter id="beautyShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#881337" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <rect width="400" height="400" fill="url(#cosBg)" rx="16"/>
+
+  <ellipse cx="200" cy="320" rx="130" ry="16" fill="#fbcfe8" opacity="0.6"/>
+
+  <g filter="url(#beautyShadow)">
+    <!-- Eye Shadow Palette (Flat open base) -->
+    <rect x="70" y="160" width="160" height="140" rx="16" fill="url(#paletteCase)"/>
+    <rect x="80" y="170" width="140" height="50" rx="6" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1"/> <!-- Mirror -->
+    <text x="150" y="200" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#64748b" text-anchor="middle">ALIZONE BEAUTY</text>
+
+    <!-- Palette Colors -->
+    <circle cx="105" cy="245" r="16" fill="#fb7185"/>
+    <circle cx="150" cy="245" r="16" fill="#d97706"/>
+    <circle cx="195" cy="245" r="16" fill="#7c3aed"/>
+    <circle cx="105" cy="280" r="14" fill="#f43f5e"/>
+    <circle cx="150" cy="280" r="14" fill="#eab308"/>
+    <circle cx="195" cy="280" r="14" fill="#fda4af"/>
+
+    <!-- Lipstick -->
+    <!-- Base Tube -->
+    <rect x="250" y="210" width="45" height="100" rx="6" fill="#18181b"/>
+    <rect x="250" y="235" width="45" height="6" fill="url(#goldCap)"/>
+    <!-- Gold Middle Tube -->
+    <rect x="256" y="160" width="33" height="50" fill="url(#goldCap)"/>
+    <!-- Red Bullet -->
+    <path d="M 258 160 L 258 125 C 258 115 285 95 287 95 C 287 95 287 160 287 160 Z" fill="url(#lipstickColor)"/>
+
+    <!-- Luxury Cosmetic Brush -->
+    <path d="M 315 295 L 340 160 C 342 150 348 150 350 160 L 330 305 Z" fill="#18181b"/>
+    <path d="M 338 170 L 344 140 L 350 142 L 345 172 Z" fill="url(#goldCap)"/>
+    <!-- Bristles -->
+    <path d="M 344 140 C 340 110 355 100 360 100 C 365 100 368 115 350 142 Z" fill="#fda4af"/>
+    <path d="M 346 130 C 345 115 355 106 360 106" stroke="#f43f5e" stroke-width="2"/>
+  </g>
+</svg>

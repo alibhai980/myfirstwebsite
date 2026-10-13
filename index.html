@@ -8,8 +8,6 @@
 
     <!-- CSS File -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style.css">
-<script src="script.js"></script>
 </head>
 
 <body>
@@ -76,9 +74,10 @@
         </div>
 
         <!-- ACCOUNT -->
-        <div class="account">
-            <span>Hello, Sign in</span>
-            <strong>Account & Orders</strong>
+        <div class="account" onclick="openLogin()">
+            <span class="account-icon">👤</span>
+            <span class="account-text">Hello, Sign in</span>
+            <strong class="account-sub">Account & Orders</strong>
         </div>
 
         <!-- CART -->
@@ -136,9 +135,12 @@
         </div>
 
         <div class="hero-image">
-            <div class="shopping-icon">🛍️</div>
-            <h2>ALIZONE</h2>
-            <p>Shopping Made Easy</p>
+            <div class="hero-badge-top">🔥 Hot Deals</div>
+            <img src="laptop.jpg" alt="Featured Tech at ALIZONE" class="hero-featured-img">
+            <div class="hero-badge-bottom">
+                <span>⭐ 4.9 Top Rated</span>
+                <strong>Save up to 50%</strong>
+            </div>
         </div>
 
     </section>
@@ -300,7 +302,7 @@
             <div class="product-card" data-price="34999">
 
                 <div class="product-image">
-                    📱
+                    <img src="images.jpg" alt="Smartphone Pro 128GB" class="product-img" loading="lazy">
                     <span class="discount">-15%</span>
                 </div>
 
@@ -333,7 +335,7 @@
             <div class="product-card" data-price="7999">
 
                 <div class="product-image">
-                    🎧
+                    <img src="headphones.jpg" alt="Wireless Bluetooth Headphones" class="product-img" loading="lazy">
                     <span class="discount">-20%</span>
                 </div>
 
@@ -363,10 +365,43 @@
 
 
             <!-- PRODUCT 3 -->
+            <div class="product-card" data-price="89999">
+
+                <div class="product-image">
+                    <img src="laptop.jpg" alt="Asus Vivobook Slim Laptop 15.6 Inch" class="product-img" loading="lazy">
+                    <span class="discount">-18%</span>
+                </div>
+
+                <div class="product-info">
+
+                    <small>Electronics</small>
+
+                    <h3>Asus Vivobook Laptop 15.6"</h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐⭐
+                        <span>(110)</span>
+                    </div>
+
+                    <div class="price">
+                        <strong>Rs. 89,999</strong>
+                        <del>Rs. 109,000</del>
+                    </div>
+
+                    <button onclick="addToCart('Asus Vivobook Laptop 15.6&quot;',89999)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 4 -->
             <div class="product-card" data-price="2999">
 
                 <div class="product-image">
-                    ⌚
+                    <img src="smartwatch.svg" alt="Smart Watch Series 8" class="product-img" loading="lazy">
                     <span class="discount">-25%</span>
                 </div>
 
@@ -395,11 +430,11 @@
             </div>
 
 
-            <!-- PRODUCT 4 -->
+            <!-- PRODUCT 5 -->
             <div class="product-card" data-price="4599">
 
                 <div class="product-image">
-                    👟
+                    <img src="shoes.svg" alt="Men Running Sports Shoes" class="product-img" loading="lazy">
                     <span class="discount">-30%</span>
                 </div>
 
@@ -428,11 +463,11 @@
             </div>
 
 
-            <!-- PRODUCT 5 -->
+            <!-- PRODUCT 6 -->
             <div class="product-card" data-price="1899">
 
                 <div class="product-image">
-                    🎒
+                    <img src="backpack.svg" alt="Premium Travel Backpack" class="product-img" loading="lazy">
                     <span class="discount">-18%</span>
                 </div>
 
@@ -461,11 +496,11 @@
             </div>
 
 
-            <!-- PRODUCT 6 -->
+            <!-- PRODUCT 7 -->
             <div class="product-card" data-price="6499">
 
                 <div class="product-image">
-                    🍳
+                    <img src="cookware.svg" alt="Non Stick Cookware Set" class="product-img" loading="lazy">
                     <span class="discount">-22%</span>
                 </div>
 
@@ -494,44 +529,11 @@
             </div>
 
 
-            <!-- PRODUCT 7 -->
-            <div class="product-card" data-price="2499">
-
-                <div class="product-image">
-                    💡
-                    <span class="discount">-15%</span>
-                </div>
-
-                <div class="product-info">
-
-                    <small>Home</small>
-
-                    <h3>Smart LED Light</h3>
-
-                    <div class="rating">
-                        ⭐⭐⭐⭐☆
-                        <span>(51)</span>
-                    </div>
-
-                    <div class="price">
-                        <strong>Rs. 2,499</strong>
-                        <del>Rs. 2,950</del>
-                    </div>
-
-                    <button onclick="addToCart('Smart LED Light',2499)">
-                        Add to Cart
-                    </button>
-
-                </div>
-
-            </div>
-
-
             <!-- PRODUCT 8 -->
             <div class="product-card" data-price="1299">
 
                 <div class="product-image">
-                    💄
+                    <img src="makeup.svg" alt="Beauty Makeup Kit" class="product-img" loading="lazy">
                     <span class="discount">-20%</span>
                 </div>
 
@@ -552,6 +554,39 @@
                     </div>
 
                     <button onclick="addToCart('Beauty Makeup Kit',1299)">
+                        Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 9 -->
+            <div class="product-card" data-price="2499">
+
+                <div class="product-image">
+                    <img src="smartlight.svg" alt="Smart LED Light" class="product-img" loading="lazy">
+                    <span class="discount">-15%</span>
+                </div>
+
+                <div class="product-info">
+
+                    <small>Home</small>
+
+                    <h3>Smart LED Light</h3>
+
+                    <div class="rating">
+                        ⭐⭐⭐⭐☆
+                        <span>(51)</span>
+                    </div>
+
+                    <div class="price">
+                        <strong>Rs. 2,499</strong>
+                        <del>Rs. 2,950</del>
+                    </div>
+
+                    <button onclick="addToCart('Smart LED Light',2499)">
                         Add to Cart
                     </button>
 

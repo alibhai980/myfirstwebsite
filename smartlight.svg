@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="lightBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <radialGradient id="bulbGlow" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="1"/>
+      <stop offset="40%" stop-color="#facc15" stop-opacity="0.8"/>
+      <stop offset="80%" stop-color="#38bdf8" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="baseMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#94a3b8"/>
+      <stop offset="50%" stop-color="#64748b"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+    <linearGradient id="bulbGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#fef9c3"/>
+      <stop offset="100%" stop-color="#fef08a"/>
+    </linearGradient>
+    <filter id="lightGlowFilter" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="22" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <rect width="400" height="400" fill="url(#lightBg)" rx="16"/>
+
+  <!-- Aura Glow -->
+  <circle cx="200" cy="180" r="140" fill="url(#bulbGlow)"/>
+
+  <!-- Smart Bulb -->
+  <g>
+    <!-- Bulb Dome Glass -->
+    <path d="M 140 180 C 120 140 145 90 200 90 C 255 90 280 140 260 180 C 250 200 235 220 230 240 L 170 240 C 165 220 150 200 140 180 Z" fill="url(#bulbGlass)" filter="url(#lightGlowFilter)"/>
+
+    <!-- RGB Smart Ring -->
+    <rect x="165" y="235" width="70" height="10" rx="3" fill="#00d084"/>
+
+    <!-- Screw Base -->
+    <path d="M 172 245 L 228 245 L 225 258 L 175 258 Z" fill="url(#baseMetal)"/>
+    <path d="M 174 258 L 226 258 L 223 270 L 177 270 Z" fill="url(#baseMetal)"/>
+    <path d="M 176 270 L 224 270 L 220 282 L 180 282 Z" fill="url(#baseMetal)"/>
+    <ellipse cx="200" cy="286" rx="14" ry="6" fill="#1e293b"/>
+
+    <!-- WiFi / Smart Waves -->
+    <path d="M 180 60 A 30 30 0 0 1 220 60" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 165 48 A 50 50 0 0 1 235 48" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+    <path d="M 150 36 A 70 70 0 0 1 250 36" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" opacity="0.4"/>
+
+    <!-- Filament Glow -->
+    <path d="M 185 170 C 190 140 210 140 215 170" fill="none" stroke="#ff9b55" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>
