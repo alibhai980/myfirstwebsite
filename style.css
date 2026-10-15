@@ -1792,3 +1792,93 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* ========================================================
+   ALIZONE AUTH & SELLER UI STYLES
+======================================================== */
+.auth-tabs {
+    display: flex;
+    border-bottom: 2px solid #e1e5e9;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.auth-tab {
+    flex: 1;
+    padding: 10px 14px;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.auth-tab.active {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+.auth-tab:hover {
+    color: var(--primary);
+}
+
+.auth-alert {
+    padding: 12px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.auth-alert.error {
+    background: #fde8e8;
+    color: #9b1c1c;
+    border: 1px solid #f8b4b4;
+}
+
+.auth-alert.success {
+    background: #def7ec;
+    color: #03543f;
+    border: 1px solid #84e1bc;
+}
+
+.acc-profile-card {
+    padding: 16px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.acc-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.logout-btn {
+    width: 100%;
+    padding: 12px;
+    background: #f3f4f6;
+    color: #374151;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+    background: #fee2e2;
+    color: #991b1b;
+    border-color: #fca5a5;
+}

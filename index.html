@@ -14,13 +14,24 @@
 
     <!-- TOP BAR -->
     <div class="top-bar">
-        <div>Welcome to ALIZONE Pakistan</div>
+        <div data-i18n="welcome">Welcome to ALIZONE Pakistan</div>
 
         <div class="top-links">
-            <a href="#seller">Seller Center</a>
-            <a href="#help">Customer Service</a>
+            <a href="#seller" data-i18n="seller_center">Seller Center</a>
+            <a href="#help" data-i18n="customer_service">Customer Service</a>
 
-            <select id="language">
+            <select id="language" onchange="changeLanguage(this.value)">
+    <option value="en">English</option>
+    <option value="ur">اردو</option>
+    <option value="ar">العربية</option>
+    <option value="hi">हिन्दी</option>
+    <option value="bn">বাংলা</option>
+    <option value="pa">ਪੰਜਾਬੀ</option>
+    <option value="ps">پښتو</option>
+    <option value="fa">فارسی</option>
+    <option value="tr">Türkçe</option>
+    <option value="zh">中文 (简体)</option>
+</select>
                 <option>English</option>
                 <option>اردو</option>
                 <option>العربية</option>
@@ -51,7 +62,7 @@
             <input
                 type="text"
                 id="searchInput"
-                placeholder="Search products on ALIZONE..."
+                placeholder="Search products on ALIZONE..." data-i18n-placeholder="search_placeholder"
             >
             <button onclick="searchProducts()">🔍</button>
         </div>
@@ -74,16 +85,16 @@
         </div>
 
         <!-- ACCOUNT -->
-        <div class="account" onclick="openLogin()">
+        <div class="account" id="accountBtn" onclick="handleAccountClick()">
             <span class="account-icon">👤</span>
-            <span class="account-text">Hello, Sign in</span>
-            <strong class="account-sub">Account & Orders</strong>
+            <span class="account-text" id="accountGreeting" data-i18n="account_greeting">Hello, Sign in</span>
+            <strong class="account-sub" id="accountStatus" data-i18n="account_status">Account & Orders</strong>
         </div>
 
         <!-- CART -->
         <div class="cart" onclick="openCart()">
             🛒
-            <span>Cart</span>
+            <span data-i18n="cart_label">Cart</span>
             <b id="cartCount">0</b>
         </div>
 
@@ -95,9 +106,9 @@
 
         <button onclick="toggleMenu()">☰ All Categories</button>
 
-        <a href="#">Home</a>
-        <a href="#categories">Categories</a>
-        <a href="#deals">Today's Deals</a>
+        <a href="#" data-i18n="nav_home">Home</a>
+        <a href="#categories" data-i18n="nav_categories">Categories</a>
+        <a href="#deals" data-i18n="nav_deals">Today's Deals</a>
         <a href="#products">Products</a>
         <a href="#seller">Sell on ALIZONE</a>
         <a href="#help">Customer Service</a>
@@ -600,6 +611,47 @@
 
 
     <!-- PAYMENT METHODS -->
+    <!-- CART MODAL -->
+    <div id="cartModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" onclick="closeCart()">&times;</span>
+            <h2>Your Shopping Cart</h2>
+            <div id="cartItems"></div>
+            <div class="cart-footer">
+                <strong>Total: <span id="cartTotal">Rs. 0</span></strong>
+                <button class="btn-primary" onclick="checkout()">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHECKOUT MODAL -->
+    <div id="checkoutModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" onclick="closeCheckout()">&times;</span>
+            <h2>Checkout</h2>
+            <form id="checkoutForm" onsubmit="placeOrder(event)">
+                <label for="custName">Name</label>
+                <input type="text" id="custName" required />
+                <label for="custPhone">Phone</label>
+                <input type="text" id="custPhone" required />
+                <label for="custAddress">Address</label>
+                <input type="text" id="custAddress" required />
+                <label for="custCity">City</label>
+                <select id="custCity" required>
+                    <option value="Lahore">Lahore</option>
+                    <option value="Faisalabad">Faisalabad</option>
+                    <option value="Karachi">Karachi</option>
+                    <option value="Islamabad">Islamabad</option>
+                </select>
+                <label for="paymentMethod">Payment Method</label>
+                <select id="paymentMethod" required>
+                    <option value="cod">Cash on Delivery</option>
+                </select>
+                <button type="submit" class="btn-primary">Place Order</button>
+            </form>
+        </div>
+    </div>
+
     <section class="payment-section">
 
         <h2>Secure Payment Methods</h2>
@@ -887,8 +939,11 @@
             <button class="close" onclick="closeSellerForm()">×</button>
 
             <h2>🏪 Become an ALIZONE Seller</h2>
+            <p style="font-size: 13px; color: #666; margin-bottom: 15px;">Register your shop on ALIZONE. Applications are reviewed within 24-48 hours.</p>
 
-            <form onsubmit="registerSeller(event)">
+            <div id="sellerAlert" class="auth-alert" style="display: none;"></div>
+
+            <form id="sellerRegistrationForm" onsubmit="registerSeller(event)">
 
                 <input
                     type="text"
@@ -907,28 +962,49 @@
                 <input
                     type="tel"
                     id="sellerPhone"
-                    placeholder="Phone Number"
+                    placeholder="Phone Number (e.g. 03001234567)"
                     required
                 >
 
                 <input
                     type="text"
                     id="shopName"
-                    placeholder="Shop Name"
+                    placeholder="Shop / Business Name"
                     required
                 >
 
-                <select required>
+                <select id="sellerCity" required>
                     <option value="">Select City</option>
                     <option>Lahore</option>
                     <option>Karachi</option>
                     <option>Islamabad</option>
                     <option>Faisalabad</option>
                     <option>Rawalpindi</option>
+                    <option>Multan</option>
+                    <option>Gujranwala</option>
+                    <option>Peshawar</option>
+                    <option>Quetta</option>
                 </select>
 
-                <button type="submit">
-                    Register Seller
+                <input
+                    type="text"
+                    id="sellerAddress"
+                    placeholder="Business / Warehouse Address"
+                    required
+                >
+
+                <select id="sellerCategory" required>
+                    <option value="">Select Primary Category</option>
+                    <option>Electronics</option>
+                    <option>Fashion & Clothing</option>
+                    <option>Home & Kitchen</option>
+                    <option>Beauty & Health</option>
+                    <option>Sports & Outdoor</option>
+                    <option>Other</option>
+                </select>
+
+                <button type="submit" id="sellerSubmitBtn">
+                    Submit Seller Application
                 </button>
 
             </form>
@@ -997,44 +1073,159 @@
     </div>
 
 
-    <!-- LOGIN MODAL -->
+    <!-- AUTH MODAL (LOGIN / SIGNUP / FORGOT PASSWORD) -->
     <div class="modal" id="loginModal">
 
         <div class="modal-content">
 
             <button class="close" onclick="closeLogin()">×</button>
 
-            <h2>ALIZONE Account</h2>
+            <h2 id="authModalTitle">ALIZONE Account</h2>
 
-            <form onsubmit="loginUser(event)">
+            <!-- TABS -->
+            <div class="auth-tabs" id="authTabsContainer">
+                <button type="button" class="auth-tab active" id="tabSignInBtn" onclick="switchAuthTab('signin')">Sign In</button>
+                <button type="button" class="auth-tab" id="tabSignUpBtn" onclick="switchAuthTab('signup')">Create Account</button>
+            </div>
+
+            <!-- FEEDBACK ALERT -->
+            <div id="authAlert" class="auth-alert" style="display: none;"></div>
+
+            <!-- 1. SIGN IN FORM -->
+            <form id="signInForm" onsubmit="loginUser(event)">
 
                 <input
                     type="email"
+                    id="loginEmail"
                     placeholder="Email Address"
                     required
                 >
 
                 <input
                     type="password"
+                    id="loginPassword"
                     placeholder="Password"
                     required
                 >
 
-                <button type="submit">
+                <div style="display: flex; justify-content: flex-end; margin-top: -4px;">
+                    <a href="#" onclick="switchAuthTab('forgot'); return false;" style="font-size: 12px; color: var(--primary); text-decoration: none;">Forgot Password?</a>
+                </div>
+
+                <button type="submit" id="signInSubmitBtn">
                     Sign In
                 </button>
 
             </form>
 
-            <p>
-                New to ALIZONE?
-                <a href="#">Create Account</a>
-            </p>
+            <!-- 2. SIGN UP FORM -->
+            <form id="signUpForm" onsubmit="signupUser(event)" style="display: none;">
+
+                <input
+                    type="text"
+                    id="signupName"
+                    placeholder="Full Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="signupEmail"
+                    placeholder="Email Address"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="signupPassword"
+                    placeholder="Create Password (min. 6 characters)"
+                    minlength="6"
+                    required
+                >
+
+                <input
+                    type="tel"
+                    id="signupPhone"
+                    placeholder="Phone Number (optional)"
+                >
+
+                <button type="submit" id="signUpSubmitBtn">
+                    Create Account
+                </button>
+
+            </form>
+
+            <!-- 3. FORGOT PASSWORD FORM -->
+            <form id="forgotForm" onsubmit="resetPassword(event)" style="display: none;">
+
+                <p style="font-size: 13px; color: #666; margin-bottom: 8px;">Enter your registered email address to receive password recovery instructions.</p>
+
+                <input
+                    type="email"
+                    id="forgotEmail"
+                    placeholder="Registered Email Address"
+                    required
+                >
+
+                <button type="submit" id="forgotSubmitBtn">
+                    Send Password Reset Link
+                </button>
+
+                <div style="text-align: center; margin-top: 10px;">
+                    <a href="#" onclick="switchAuthTab('signin'); return false;" style="font-size: 13px; color: var(--primary); text-decoration: none;">← Back to Sign In</a>
+                </div>
+
+            </form>
 
         </div>
 
     </div>
 
+
+    <!-- USER PROFILE / ACCOUNT MODAL (LOGGED IN STATE) -->
+    <div class="modal" id="accountModal">
+
+        <div class="modal-content">
+
+            <button class="close" onclick="closeAccountModal()">×</button>
+
+            <h2>👤 My ALIZONE Account</h2>
+
+            <div class="acc-profile-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <strong style="font-size: 18px;" id="accUserName">Customer Name</strong>
+                    <span id="accUserRole" class="acc-badge">CUSTOMER</span>
+                </div>
+                <p style="font-size: 13px; color: #555; margin-bottom: 4px;"><strong>Email:</strong> <span id="accUserEmail">email@example.com</span></p>
+                <p style="font-size: 13px; color: #555;"><strong>Member Since:</strong> <span id="accUserDate">-</span></p>
+            </div>
+
+            <!-- SELLER STATUS BOX -->
+            <div id="accSellerStatusBox" style="margin-bottom: 20px; padding: 12px; border-radius: 8px; background: #fff8eb; border: 1px solid #ffd591;">
+                <p style="font-size: 13px; color: #b7791f; margin: 0;" id="accSellerStatusText">Checking seller status...</p>
+            </div>
+
+            <!-- ACTION BUTTONS -->
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <button type="button" class="checkout-button" onclick="closeAccountModal(); openSellerForm();" id="accSellerActionBtn" style="background: var(--dark);">
+                    🏪 ALIZONE Seller Center
+                </button>
+
+                <button type="button" class="logout-btn" onclick="logoutUser()">
+                    🚪 Sign Out
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SUPABASE JS LIBRARY (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- SUPABASE CONFIGURATION -->
+    <script src="supabase-config.js"></script>
 
     <!-- JAVASCRIPT FILE -->
     <script src="script.js"></script>
